@@ -13,6 +13,20 @@
             "threshold": 0.9845962524414067
         }
     },
+    "chebyshev": {
+        "reward_low_FN_rate": {
+            "score": -151.22075356229115,
+            "threshold": 0.014417711494146526
+        },
+        "reward_low_FP_rate": {
+            "score": -85.42508014559691,
+            "threshold": 0.5230443422260267
+        },
+        "standard": {
+            "score": -73.22075356229115,
+            "threshold": 0.014417711494146526
+        }
+    },
     "contextOSE": {
         "reward_low_FN_rate": {
             "score": 22.67222031445549,
