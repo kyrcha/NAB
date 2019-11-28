@@ -3,21 +3,23 @@ from nab.detectors.base import AnomalyDetector
 import math
 
 class ChebyshevDetector(AnomalyDetector):
-    """ An streaming version of the algorithm found in the paper: 
+    """ An streaming version of the algorithm in the paper: 
     "Data Outlier Detection using the Chebyshev Theorem"
     using Welford's online algorithm to calculate mean and standard deviation
     """
 
     def __init__(self, *args, **kwargs):
         super(ChebyshevDetector, self).__init__(*args, **kwargs)
-        self.p1 = 0.1 # Stage 1 probability 
-        self.p2 = 0.001 # Stage 2 probability 
+        # Stage 1 properties
+        self.p1 = 0.1 # Probability of expecting an outlier in stage 1
         self.k1 = 1/math.sqrt(self.p1)
-        self.k2 = 1/math.sqrt(self.p2)
         self.n1 = 0
         self.m1 = 0
         self.m1_2 = 0
         self.std1 = 1
+        # Stage 2 properties
+        self.p2 = 0.001 # Probability of expecting an outlier in stage 2
+        self.k2 = 1/math.sqrt(self.p2)
         self.n2 = 0
         self.m2 = 0
         self.m2_2 = 0
